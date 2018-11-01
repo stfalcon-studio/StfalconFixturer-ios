@@ -16,7 +16,6 @@
   s.framework = "UIKit"
 
   s.source_files = "StfalconFixturer/**/*.{swift}"
-  s.resources = "StfalconFixturer/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 
   s.swift_version = "4.2"
 

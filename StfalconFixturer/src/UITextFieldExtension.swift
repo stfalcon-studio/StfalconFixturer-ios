@@ -16,7 +16,7 @@ extension UITextField {
 		Fixturer.shared.register(self, for: tag)
 		let gesture = UITapGestureRecognizer(target: self, action: #selector(showFixtures(_:)))
 		gesture.numberOfTapsRequired = 3 // TODO: make available to set from outside
-			self.addGestureRecognizer(gesture)
+		self.addGestureRecognizer(gesture)
 		#endif
 	}
 	

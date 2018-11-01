@@ -13,7 +13,7 @@ public typealias FixtureTag = String
 internal final class FixtureItem: Codable {
 	
 	var tag: FixtureTag
-	var group: String
+	var group: String?
 	var values: [String]
 }
 
