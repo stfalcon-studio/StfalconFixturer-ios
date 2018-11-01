@@ -7,7 +7,7 @@
   s.requires_arc = true
 
   s.version = "0.1.0"
-  s.license = { :type => "MIT", :file => "LICENSE" }
+  s.license = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
   s.author = { "Alex Frankiv" => "oleksandr.frankiv@stfalcon.com" }
   s.homepage = "https://github.com/stfalcon-studio/StfalconFixturer-ios"
   s.source = { :git => "https://github.com/stfalcon-studio/StfalconFixturer-ios.git",
