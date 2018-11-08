@@ -49,7 +49,7 @@ Download via Cocoapods:
 Here  
 `tag` means the type of fixtures. You are able to specify any type you need.  
 `values` is the array of fixtures for the particular tag.  
-`group` (optionally) allows you to implement autofilling. That means if you choose a fixture #2 for any of the fixtured fields, 
+`group` (optionally) allows you to implement autofilling. That means if you choose a fixture #2 for any of the fixtured fields,
 all the other fields of that group will be autofilled with fixture #2 according to their tag.
 
 2. Specify your json source file's name to Fixturer in AppDelegate:
@@ -59,22 +59,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   #if DEBUG
     Fixturer.shared.specify(source: "fixtures")
   #endif
-  
+
   return true
 }
 ```
 
-3. Specify tag for particular `UITextField` easily in `didSet`:
-```swift
-@IBOutlet private weak var emailTextInput: UITextField! {
-  didSet { emailTextInput.setFixtureTag("email") }
-}
-```
+3. Specify `Fixture Tag` for particular `UITextField` easily in Interface Builder:  
 
-4. Now on triple tapping your `UITextField` controller will present action sheet with all the available fixtures 
+![Imgur](https://i.imgur.com/3viV1cb.png)
+
+4. Now on triple tapping your `UITextField` controller will present action sheet with all the available fixtures
 according to the tag of `UITextField`.
 
-### License 
+### License
 
 ```
 Copyright 2018 stfalcon.com

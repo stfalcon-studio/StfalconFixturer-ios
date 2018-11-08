@@ -6,7 +6,7 @@
   s.summary = "A simple light-weight way to add autofilling fixtures to UITextFields debug."
   s.requires_arc = true
 
-  s.version = "0.1.0"
+  s.version = "0.1.1"
   s.license = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
   s.author = { "Alex Frankiv" => "oleksandr.frankiv@stfalcon.com" }
   s.homepage = "https://github.com/stfalcon-studio/StfalconFixturer-ios"

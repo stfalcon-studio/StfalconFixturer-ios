@@ -19,12 +19,12 @@ extension UIViewController {
 		for (index, value) in Fixturer.shared.fixtures(for: fixtureItem.tag).enumerated() {
 			
 			controller.addAction(UIAlertAction(title: value, style: .default, handler: { (_) in
-				view.setFixtureText(value)
+				view.text = value
 				Fixturer.shared.inputs.keyEnumerator().forEach({ key in
 					guard let key = key as? UIView,
 						let value = Fixturer.shared.inputs.object(forKey: key) else { return }
 					if key != view && value.group == fixtureItem.group {
-						(key as? UITextField)?.setFixtureText(value.values[index])
+						(key as? UITextField)?.text = value.values[index]
 					}
 				})
 			}))

@@ -11,18 +11,19 @@ import UIKit
 extension UITextField {
 	
 	// MARK: - Public
-	public func setFixtureTag(_ tag: FixtureTag) {
-		#if DEBUG
-		Fixturer.shared.register(self, for: tag)
-		let gesture = UITapGestureRecognizer(target: self, action: #selector(showFixtures(_:)))
-		gesture.numberOfTapsRequired = 3 // TODO: make available to set from outside
-		self.addGestureRecognizer(gesture)
-		#endif
-	}
-	
-	// MARK: - Internal
-	internal func setFixtureText(_ text: String?) {
-		self.text = text
+	@IBInspectable public var fixtureTag: String? {
+		set {
+			#if DEBUG
+			guard let fixtureTag = newValue else { return }
+			Fixturer.shared.register(self, for: fixtureTag)
+			let gesture = UITapGestureRecognizer(target: self, action: #selector(showFixtures(_:)))
+			gesture.numberOfTapsRequired = 3 // TODO: make available to set from outside
+			self.addGestureRecognizer(gesture)
+			#endif
+		}
+		get {
+			return Fixturer.shared.inputs.object(forKey: self)?.tag
+		}
 	}
 	
 	// MARK: - Private
