@@ -67,7 +67,7 @@ After that you can bind `Fixture Tag` for particular `UITextField` easily in Int
 
 Run your application and look on magic :) You can call fixtures dialog by triple tap on bound to fixture `UITextField`.
 
-![Imgur](https://i.imgur.com/BaSwMtn.gif)
+![Imgur](https://i.imgur.com/RAcG4Ct.gif)
 
 ### License
 
