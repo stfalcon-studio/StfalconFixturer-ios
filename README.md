@@ -10,7 +10,7 @@ Need iOS and Android apps, MVP development or prototyping? Contact us via info@s
 
 Download via Cocoapods:
 ```pod
- pod 'StfalconFixturer', '0.1.0'
+ pod 'StfalconFixturer', '0.1.1'
 ```
 
 ### Usage
