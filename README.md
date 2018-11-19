@@ -1,11 +1,10 @@
-# StfalconFixturer
+# Stfalcon Fixturer
 
-A simple light-weight way to add autofilling fixtures to UITextFields for debug.
-
-![Stfalcon Fixturer](https://i.imgur.com/Jo01gtY.gif)
+A Utility for developers and QAs which helps minimize time wasting on writing the same data for testing over and over again.
+You can write fixture in XML one time and use it for build testing. The library can autofill EditText with your fixture data.
 
 ### Who we are
-Need iOS and Android apps, MVP development or prototyping? Contact us via info@stfalcon.com. We develop software since 2009, and we're known experts in this field. Check out our [portfolio](https://stfalcon.com/en/portfolio) and see more libraries from [stfalcon-studio](https://stfalcon-studio.github.io/).
+Need iOS and Android apps, MVP development or prototyping? Contact us via info@stfalcon.com. We develop software since 2009, and we're known experts in this field. Check out our [portfolio](https://stfalcon.com/en/portfolio) and see more libraries from [stfalcon-studio](https://stfalcon.com/en/opensource).
 
 ### Download
 
@@ -16,7 +15,8 @@ Download via Cocoapods:
 
 ### Usage
 
-1. Create json file with fixtures as in example:
+Create json file in your project.
+Example:
 ```json
 [
   {
@@ -46,13 +46,10 @@ Download via Cocoapods:
   }
 ]
 ```
-Here  
-`tag` means the type of fixtures. You are able to specify any type you need.  
-`values` is the array of fixtures for the particular tag.  
-`group` (optionally) allows you to implement autofilling. That means if you choose a fixture #2 for any of the fixtured fields,
-all the other fields of that group will be autofilled with fixture #2 according to their tag.
+All entries require `tag` attribute. This tag will be used for binding input fields to fixture.
+Also you can put some fixtures in groups. For example `email` and `password` can be marked as group `account`. This two fixtures must have the same item count. And in this case where we will select one fixture from group, it will automatically put data to all bound EditTexts to the same grouped fixtures.  
 
-2. Specify your json source file's name to Fixturer in AppDelegate:
+To initialize library you have to specify your json source file's name to Fixturer in AppDelegate:
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
   // Override point for customization after application launch.
@@ -64,12 +61,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-3. Specify `Fixture Tag` for particular `UITextField` easily in Interface Builder:  
+After that you can bind `Fixture Tag` for particular `UITextField` easily in Interface Builder:  
 
-![Imgur](https://i.imgur.com/3viV1cb.png)
+![Imgur](https://i.imgur.com/rOtB82Q.png)
 
-4. Now on triple tapping your `UITextField` controller will present action sheet with all the available fixtures
-according to the tag of `UITextField`.
+Run your application and look on magic :) You can call fixtures dialog by triple tap on bound to fixture `UITextField`.
+
+![Imgur](https://i.imgur.com/BaSwMtn.gif)
 
 ### License
 
